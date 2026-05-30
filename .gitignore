@@ -1,0 +1,34 @@
+# Secrets / config
+.env
+
+# Large data (exceeds GitHub's 100 MB file limit) - regenerate / download
+data_jobs.csv
+data/*.csv
+
+# Large model binaries (806 MB stacking model) - regenerate via training
+outputs/models/
+*.joblib
+*.pkl
+*.cbm
+mlruns/
+catboost_info/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Run logs
+*.log
+
+# OS / IDE
+.DS_Store
+.ipynb_checkpoints/
+
+# Office temporary lock files
+~$*
+
+# Note: outputs/eda, outputs/figures and outputs/reports (incl. the Word
+# report and PowerPoint) ARE tracked so the repo is presentable.

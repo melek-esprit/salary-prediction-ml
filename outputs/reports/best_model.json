@@ -1,0 +1,38 @@
+{
+  "best_model": "StackingEnsemble",
+  "lightgbm_params": {
+    "n_estimators": 703,
+    "learning_rate": 0.07584431955207034,
+    "num_leaves": 83,
+    "max_depth": 11,
+    "subsample": 0.8276661097854975,
+    "colsample_bytree": 0.8261890565334703,
+    "reg_lambda": 0.003134371687834272,
+    "reg_alpha": 0.3499359929698441,
+    "min_child_samples": 13
+  },
+  "xgboost_params": {
+    "n_estimators": 649,
+    "learning_rate": 0.06016088958969167,
+    "max_depth": 9,
+    "subsample": 0.741252448518813,
+    "colsample_bytree": 0.6624231211152343,
+    "reg_lambda": 0.005212540602029666,
+    "reg_alpha": 0.34364471791417095,
+    "min_child_weight": 10,
+    "gamma": 0.012942353033417349
+  },
+  "validation": {
+    "MAE": 20593.114622623547,
+    "RMSE": 29159.114155164087,
+    "R2": 0.6168590320921841,
+    "MAPE": 18.505683992198936,
+    "model": "StackingEnsemble"
+  },
+  "test": {
+    "MAE": 20734.334351079804,
+    "RMSE": 29626.15081893251,
+    "R2": 0.5874298279187264,
+    "MAPE": 18.513492117856583
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "feature": "job_title",
+    "importance": 0.24204796005746632
+  },
+  {
+    "feature": "company_name",
+    "importance": 0.11849021748225516
+  },
+  {
+    "feature": "seniority_score",
+    "importance": 0.06879528859718245
+  },
+  {
+    "feature": "skills_text",
+    "importance": 0.05805815234953508
+  },
+  {
+    "feature": "job_country",
+    "importance": 0.03262566498741315
+  },
+  {
+    "feature": "job_location",
+    "importance": 0.020381331237026255
+  },
+  {
+    "feature": "job_title_short",
+    "importance": 0.0196972006038848
+  },
+  {
+    "feature": "health_flag",
+    "importance": 0.013371516517801085
+  },
+  {
+    "feature": "cat_analyst_tools",
+    "importance": 0.004643577184697367
+  },
+  {
+    "feature": "title_len",
+    "importance": 0.003737212036530235
+  },
+  {
+    "feature": "posted_month",
+    "importance": 0.00371107938638453
+  },
+  {
+    "feature": "remote_flag",
+    "importance": 0.0026871978816689567
+  },
+  {
+    "feature": "title_word_count",
+    "importance": 0.0018328098605508547
+  },
+  {
+    "feature": "cat_cloud",
+    "importance": 0.0013869167412173145
+  },
+  {
+    "feature": "cat_databases",
+    "importance": 0.0012922885111967374
+  },
+  {
+    "feature": "no_degree_flag",
+    "importance": 0.0009696789666339356
+  },
+  {
+    "feature": "n_skill_categories",
+    "importance": 0.0008452049072472434
+  },
+  {
+    "feature": "job_schedule_type",
+    "importance": 0.0007522882421426181
+  },
+  {
+    "feature": "cat_programming",
+    "importance": 0.0006496534944904874
+  },
+  {
+    "feature": "cat_libraries",
+    "importance": 0.0003481473645245758
+  },
+  {
+    "feature": "n_skills",
+    "importance": 0.00029463689504829473
+  },
+  {
+    "feature": "cat_webframeworks",
+    "importance": 0.00022043257348061118
+  },
+  {
+    "feature": "cat_other",
+    "importance": 7.502763077356089e-05
+  },
+  {
+    "feature": "salary_rate",
+    "importance": 8.881784197001253e-17
+  }
+]

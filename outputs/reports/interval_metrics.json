@@ -1,0 +1,7 @@
+{
+  "lower_q": 0.05,
+  "upper_q": 0.95,
+  "empirical_coverage_pct": 81.32767505304638,
+  "nominal_coverage_pct": 89.99999999999999,
+  "mean_interval_width_usd": 75437.72224192962
+}
