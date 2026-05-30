@@ -6,12 +6,17 @@ data_jobs.csv
 data/*.csv
 
 # Large model binaries (806 MB stacking model) - regenerate via training
-outputs/models/
-*.joblib
+outputs/models/*
 *.pkl
 *.cbm
 mlruns/
 catboost_info/
+
+# ...but DO ship the compact deployable models so the repo works out-of-the-box
+# (LightGBM ~1.3 MB + two quantile models ~3 MB each). Negations must come last.
+!outputs/models/best_model.joblib
+!outputs/models/quantile_lower.joblib
+!outputs/models/quantile_upper.joblib
 
 # Python
 __pycache__/

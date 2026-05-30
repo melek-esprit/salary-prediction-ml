@@ -1,5 +1,6 @@
 {
-  "best_model": "StackingEnsemble",
+  "best_model": "LightGBM",
+  "note": "Deployable single LightGBM committed to the repo (a few MB). The full stacking ensemble scores marginally higher but is ~806 MB and is regenerated via `python -m src.models.advanced`.",
   "lightgbm_params": {
     "n_estimators": 703,
     "learning_rate": 0.07584431955207034,
@@ -23,16 +24,31 @@
     "gamma": 0.012942353033417349
   },
   "validation": {
-    "MAE": 20593.114622623547,
-    "RMSE": 29159.114155164087,
-    "R2": 0.6168590320921841,
-    "MAPE": 18.505683992198936,
-    "model": "StackingEnsemble"
+    "MAE": 21125.900575412623,
+    "RMSE": 29770.47141316473,
+    "R2": 0.600624551468379,
+    "MAPE": 18.39241675439905,
+    "model": "LightGBM"
   },
   "test": {
-    "MAE": 20734.334351079804,
-    "RMSE": 29626.15081893251,
-    "R2": 0.5874298279187264,
-    "MAPE": 18.513492117856583
+    "MAE": 21374.39199644572,
+    "RMSE": 30423.922644155722,
+    "R2": 0.5649113203029998,
+    "MAPE": 18.41486806323665
+  },
+  "stacking_ensemble_reference": {
+    "validation": {
+      "MAE": 20593.114622623547,
+      "RMSE": 29159.114155164087,
+      "R2": 0.6168590320921841,
+      "MAPE": 18.505683992198936,
+      "model": "StackingEnsemble"
+    },
+    "test": {
+      "MAE": 20734.334351079804,
+      "RMSE": 29626.15081893251,
+      "R2": 0.5874298279187264,
+      "MAPE": 18.513492117856583
+    }
   }
 }

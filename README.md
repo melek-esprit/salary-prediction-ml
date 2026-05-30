@@ -109,6 +109,38 @@ The system outputs a **salary range** via quantile regression (5th–95th
 percentile), with ~85% empirical coverage on the test set. Top salary drivers:
 job title, company, seniority, skills, country, and location.
 
+## 4c. Models shipped in this repo (works out-of-the-box)
+
+The full **stacking ensemble** is the best-scoring model (R² ≈ 0.59) but the
+serialized file is **~806 MB**, which exceeds GitHub's 100 MB limit. To keep the
+repo runnable immediately after cloning, the committed deployable model is a
+single **Optuna-tuned LightGBM** (same hyper-parameters as the ensemble's
+LightGBM base), which scores within ~0.02 R² of the ensemble but weighs only
+**~1.3 MB**:
+
+| Committed file | Size | Role |
+|----------------|------|------|
+| `outputs/models/best_model.joblib`   | ~1.3 MB | deployed LightGBM (point estimate) |
+| `outputs/models/quantile_lower.joblib` | ~2.5 MB | 5th-percentile (range lower bound) |
+| `outputs/models/quantile_upper.joblib` | ~2.8 MB | 95th-percentile (range upper bound) |
+
+So `uvicorn`/`streamlit` and `POST /predict` work straight away — **no dataset
+or retraining required.** Deployed-model metrics live in
+`outputs/reports/best_model.json`, which also keeps the stacking ensemble's
+numbers under `stacking_ensemble_reference`.
+
+**To regenerate the full 806 MB stacking ensemble** (e.g. to reproduce the
+headline R² ≈ 0.59), place `data_jobs.csv` in the project root and run:
+
+```bash
+python -m src.models.advanced     # rebuilds + promotes the stacking ensemble
+python -m src.models.intervals     # rebuilds the quantile range models
+# (or) python -m src.models.deploy_lightgbm   # rebuild only the compact model
+```
+
+The raw `data_jobs.csv` (~220 MB) and the heavy ensemble are git-ignored; the
+dataset is the public **Luke Barousse "Data Jobs"** 2023 dataset.
+
 ## 5. Modeling approach
 
 1. **Features**
@@ -153,7 +185,7 @@ Response (point estimate + range):
   "lower": 92335.0,
   "upper": 202264.0,
   "currency": "USD",
-  "model": "StackingEnsemble"
+  "model": "LightGBM"
 }
 ```
 
