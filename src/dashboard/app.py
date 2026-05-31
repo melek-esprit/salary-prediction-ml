@@ -5,6 +5,14 @@ Run with:  streamlit run src/dashboard/app.py
 from __future__ import annotations
 
 import json
+import sys
+from pathlib import Path
+
+# Ensure the project root is importable when launched via `streamlit run`
+# (Streamlit only puts the script's own folder on sys.path).
+_ROOT = Path(__file__).resolve().parents[2]
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 
 import pandas as pd
 import streamlit as st
